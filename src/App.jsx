@@ -4,6 +4,7 @@ import Editor from './components/Editor.jsx'
 import GerenciadorTarefas from './components/GerenciadorTarefas.jsx'
 import PesquisarTarefas from './components/PesquisarTarefas.jsx'
 import FiltrarTarefas from './components/FiltrarTarefas.jsx'
+import OrdenarTarefas from './components/OrdenarTarefas.jsx'
 import Elemento from './components/Elemento.jsx'
 import {bancoDados} from './assets/js/bancoDados.js'
 import {bancoEditor} from './assets/js/bancoEditor.js'
@@ -25,55 +26,70 @@ function App() {
     <>
       <header className='header'>
         <picture className='header-logo'>
-          <img className='header-logo-item' src="../img/logo/empire.png" alt="Empire Logo" />
+          <img className='header-logo-item' src="./src/assets/img/taskifyLogo.png" alt="Empire Logo" />
         </picture>
         <nav className='header-nav'>
           <ul className='header-nav-lista'>
-            <li className='header-nav-lista-item'><a href="#">Empire</a></li>
-            <li className='header-nav-lista-item'><a href="#">Serviços</a></li>
-            <li className='header-nav-lista-item'><a href="#">Suporte</a></li>
+            <li className='header-nav-lista-item material-symbols-outlined'><a href="#">history</a></li>
+            <li className='header-nav-lista-item material-symbols-outlined'><a href="#">help</a></li>
+            <li className='header-nav-lista-item material-symbols-outlined'><a href="#">settings</a></li>
+            <li className='header-nav-lista-item material-symbols-outlined'><a href="#">account_circle</a></li>
           </ul>
         </nav>
-        
       </header>
       <main className='main'>
-        <section className='tarefas'>
-          <div className='tarefasTools'>
-            <div className='tarefasTools-filter'>
-              <div className='tarefas-pesquisar'>
-                <PesquisarTarefas dados={dados} search={search} setSearch={setSearch}/>
-              </div>
-              <div className='tarefas-filtros'>
-                <FiltrarTarefas filter={filter} setFilter={setFilter} setSort={setSort}/>
-              </div>
-            </div>
-            <div className='tarefasTools-creator'>
-              <button className='button-creator' onClick={handleOpenForm}>Criar Tarefa</button>
-            </div>
+        <aside className='tarefaTools'>
+          <div className='tarefaTools-divCreator'>
+            <button className='button-creator' onClick={handleOpenForm}>Criar Tarefa</button>
           </div>
+          <div className='tarefaTools-divSearch'>
+            <PesquisarTarefas dados={dados} search={search} setSearch={setSearch}/>
+          </div>
+          <div className='tarefaTools-divFilter'>
+            <FiltrarTarefas filter={filter} setFilter={setFilter}/>
+          </div>
+          <div className='tarefaTools-divOrder'>
+            <OrdenarTarefas setSort={setSort}/>
+          </div>
+        </aside>
+        <section className='tarefas'>
           <div className='tarefasRegistradas'>
-            {dados
-              .filter((todo) => filter === "All" ? true : filter === "completed" ? todo.isCompleted : !todo.isCompleted)
-              .filter((todo) => todo.text.toLowerCase().includes(search.toLowerCase()))
-              .sort((a, b) => sort === "Asc" ? a.text.localeCompare(b.text) : b.text.localeCompare(a.text))
-              .map((todo) =>
-              <Elemento key={todo.id} todo={todo} dados={dados} setDados={setDados} dadosEdit={dadosEdit} setDadosEdit={setDadosEdit}/>
-            )}
+            <table>
+              <thead>
+                <tr>
+                  <th>TAREFA</th>
+                  <th>STATUS</th>
+                  <th>DATA INICIO</th>
+                  <th>DATA TERMINO</th>
+                  <th>PRIORIDADE</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dados
+                  .filter((todo) => filter === "All" ? true : filter === "completed" ? todo.isCompleted : !todo.isCompleted)
+                  .filter((todo) => todo.text.toLowerCase().includes(search.toLowerCase()))
+                  .sort((a, b) => sort === "Asc" ? a.text.localeCompare(b.text) : b.text.localeCompare(a.text))
+                  .map((todo) =>
+                  <Elemento key={todo.id} todo={todo} dados={dados} setDados={setDados} dadosEdit={dadosEdit} setDadosEdit={setDadosEdit}/>
+                )}
+              </tbody>
+            </table>
           </div>
         </section>
-      </main>
-      {dadosEdit && dadosEdit.length > 0 &&(
-        <div className='editor'>
-          <div className='editor-div'>
-            <Editor dadosEdit={dadosEdit} setDadosEdit={setDadosEdit} dados={dados} setDados={setDados}/>
+        {dadosEdit && dadosEdit.length > 0 &&(
+          <div className='editor'>
+            <div className='editor-div'>
+              <Editor dadosEdit={dadosEdit} setDadosEdit={setDadosEdit} dados={dados} setDados={setDados}/>
+            </div>
           </div>
-        </div>
-      )}
-      {isFormVisible &&(
-        <div className='criadorTarefas'>
-            <GerenciadorTarefas dados={dados} setDados={setDados} setIsFormVisible={setIsFormVisible}/>
-        </div>
-      )}
+        )}
+
+        {isFormVisible &&(
+          <div className='criadorTarefas'>
+              <GerenciadorTarefas dados={dados} setDados={setDados} setIsFormVisible={setIsFormVisible}/>
+          </div>
+        )}
+      </main>
     </>
   )
 }

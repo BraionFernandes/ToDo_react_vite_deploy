@@ -23,19 +23,31 @@ export default function Elemento(props){
         props.setDadosEdit(filterDados);
         props.setDados(filternaoEditado);
     }
-    
+
     return(
         <>
-            <div className='tarefa' style={{textDecoration: props.todo.isCompleted ? "line-through" : "", backgroundColor: props.todo.isCompleted ? "#85e95d" : "#E9BC5D"}}>
-                <div>
-                    <p>{props.todo.text}</p>
-                </div>
-                <div className='tarefa-buttons'>
-                    <button id="btnConcluir" className="material-symbols-outlined" onClick={()=> completedElemento(props.todo.id)}>done</button>
-                    <button id="btnEditar" className="material-symbols-outlined" onClick={()=> editarElemento(props.todo.id)}>edit</button>
-                    <button id="btnExcluir" className="material-symbols-outlined" onClick={()=> removeElemento(props.todo.id)}>close</button>
-                </div>
-            </div>
+            <tr>
+                <td>{props.todo.text}</td>
+                <td>EM ANDAMENTO</td>
+                <td>24/09/2024</td>
+                <td>01/12/2024</td>
+                <td>ALTA</td>
+            </tr>
         </>
     )
+    
+    // return(
+    //     <>
+    //         <div className='tarefa' style={{textDecoration: props.todo.isCompleted ? "line-through" : "", backgroundColor: props.todo.isCompleted ? "#85e95d" : "#E9BC5D"}}>
+    //             <div>
+    //                 <p>{props.todo.text}</p>
+    //             </div>
+    //             <div className='tarefa-buttons'>
+    //                 <button id="btnConcluir" className="material-symbols-outlined" onClick={()=> completedElemento(props.todo.id)}>done</button>
+    //                 <button id="btnEditar" className="material-symbols-outlined" onClick={()=> editarElemento(props.todo.id)}>edit</button>
+    //                 <button id="btnExcluir" className="material-symbols-outlined" onClick={()=> removeElemento(props.todo.id)}>close</button>
+    //             </div>
+    //         </div>
+    //     </>
+    // )
 }
