@@ -14,7 +14,10 @@ function App() {
   const [dados,setDados]=bancoDados();
   const [dadosEdit,setDadosEdit]=bancoEditor();
   const [search,setSearch]=useState("");
-  const [filter,setFilter]=useState("All");
+  const [fstatus,setFstatus]=useState("All");
+  const [fpriority,setFpriority]=useState("All");
+  const [status,setStatus]=useState('');
+  const [priority,setPriority]=useState('');
   const [sort,setSort]=useState("Asc");
   const [isFormVisible,setIsFormVisible]=useState(false);
 
@@ -46,7 +49,7 @@ function App() {
             <PesquisarTarefas dados={dados} search={search} setSearch={setSearch}/>
           </div>
           <div className='tarefaTools-divFilter'>
-            <FiltrarTarefas filter={filter} setFilter={setFilter}/>
+            <FiltrarTarefas fstatus={fstatus} setFstatus={setFstatus} fpriority={fpriority} setFpriority={setFpriority}/>
           </div>
           <div className='tarefaTools-divOrder'>
             <OrdenarTarefas setSort={setSort}/>
@@ -54,19 +57,52 @@ function App() {
         </aside>
         <section className='tarefas'>
           <div className='tarefasRegistradas'>
-            <table>
-              <thead>
-                <tr>
-                  <th>TAREFA</th>
-                  <th>STATUS</th>
-                  <th>DATA INICIO</th>
-                  <th>DATA TERMINO</th>
-                  <th>PRIORIDADE</th>
+            <table className='tabela'>
+              <thead className='tabela-head'>
+                <tr className='tabela-head-linha'>
+                  <th className='tabela-head-coluna-tarefa'>TAREFA</th>
+                  <th className='tabela-head-coluna-status'>STATUS</th>
+                  <th className='tabela-head-coluna-dataini'>DATA INICIO</th>
+                  <th className='tabela-head-coluna-datater'>DATA TERMINO</th>
+                  <th className='tabela-head-coluna-prioridade'>PRIORIDADE</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className='tabela-body'>
                 {dados
-                  .filter((todo) => filter === "All" ? true : filter === "completed" ? todo.isCompleted : !todo.isCompleted)
+                  .filter((todo) => {
+                    switch (fstatus) {
+                      case "All":
+                          return true;
+                      case "Feito":
+                          return todo.status === "Feito";
+                      case "EmAndamento":
+                          return todo.status === "EmAndamento";
+                      case "Parado":
+                          return todo.status === "Parado";
+                      case "NaoIniciado":
+                          return todo.status === "NaoIniciado";
+                      default:
+                          return false;
+                      }
+                  })
+                  .filter((todo) => {
+                    switch (fpriority) {
+                      case "All":
+                          return true;
+                      case "Critico":
+                          return todo.priority === "Critico";
+                      case "Alta":
+                          return todo.priority === "Alta";
+                      case "Media":
+                          return todo.priority === "Media";
+                      case "Baixa":
+                          return todo.priority === "Baixa";
+                      case "SemPrioridade":
+                          return todo.priority === "SemPrioridade";
+                      default:
+                          return false;
+                      }
+                  })
                   .filter((todo) => todo.text.toLowerCase().includes(search.toLowerCase()))
                   .sort((a, b) => sort === "Asc" ? a.text.localeCompare(b.text) : b.text.localeCompare(a.text))
                   .map((todo) =>
@@ -86,7 +122,7 @@ function App() {
 
         {isFormVisible &&(
           <div className='criadorTarefas'>
-              <GerenciadorTarefas dados={dados} setDados={setDados} setIsFormVisible={setIsFormVisible}/>
+              <GerenciadorTarefas dados={dados} setDados={setDados} status={status} setStatus={setStatus} priority={priority} setPriority={setPriority} setIsFormVisible={setIsFormVisible}/>
           </div>
         )}
       </main>
