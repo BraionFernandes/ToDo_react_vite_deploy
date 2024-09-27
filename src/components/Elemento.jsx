@@ -18,12 +18,12 @@ export default function Elemento(props){
 
     return(
         <>
-            <tr className='tabela-body-linha'>
-                <td className='tabela-body-coluna-tarefa'>{props.todo.text}<button className='elemento-configurar' onClick={()=> editarElemento(props.todo.id)}><i className='material-symbols-outlined'>open_in_full</i> Abrir</button></td>
-                <td className='tabela-body-coluna-status'>{props.todo.status}</td>
-                <td className='tabela-body-coluna-dataini'>{props.todo.dataIni === "" ? "Não Definido" : props.todo.dataIni}</td>
-                <td className='tabela-body-coluna-datater'>{props.todo.dataTer === "" ? "Não Definido" : props.todo.dataTer}</td>
-                <td className='tabela-body-coluna-prioridade'>{props.todo.priority}</td>
+            <tr className='body-linha'>
+                <td className='body-coluna-tarefa'>{props.todo.text}<button className='tarefa-config' onClick={()=> editarElemento(props.todo.id)}><i className='material-symbols-outlined'>open_in_full</i> Abrir</button></td>
+                <td className='body-coluna-status'>{props.todo.status}</td>
+                <td className='body-coluna-dataini'>{props.todo.dataIni === "" ? "Não Definido" : props.todo.dataIni}</td>
+                <td className='body-coluna-datater'>{props.todo.dataTer === "" ? "Não Definido" : props.todo.dataTer}</td>
+                <td className='body-coluna-prioridade'>{props.todo.priority}</td>
             </tr>
         </>
     )

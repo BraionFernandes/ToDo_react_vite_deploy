@@ -14,26 +14,28 @@ export default function FiltrarTarefas(props){
 
     return(
         <>
-          <button className='divFilter-button' onClick={isFiltroVisible ? handCloseFiltro : handOpenFiltro}><i className='material-symbols-outlined'>tune</i> Filtro</button>
+          <button className='filter-button' onClick={isFiltroVisible ? handCloseFiltro : handOpenFiltro}><i className='material-symbols-outlined'>tune</i> Filtro</button>
           {isFiltroVisible &&(
             <div className='filter'>
               <div className='filter-status'>
-                <p>Status: </p>
-                <select value={props.fstatus} onChange={(e)=> props.setFstatus(e.target.value)}>
-                  <option value='All'>Todos</option>
-                  <option value='Feito'>Feito</option>
-                  <option value='EmAndamento'>Em andamento</option>
-                  <option value='Parado'>Parado</option>
-                  <option value="NaoIniciado">Não iniciado</option>
+                <p className='status-title'>Status: </p>
+                <select className='status-select' value={props.fstatus} onChange={(e)=> props.setFstatus(e.target.value)}>
+                  <option className='status-option-all' value='All'>Todos</option>
+                  <option className='status-option-feito' value='Feito'>Feito</option>
+                  <option className='status-option-emAndamento' value='EmAndamento'>Em andamento</option>
+                  <option className='status-option-parado' value='Parado'>Parado</option>
+                  <option className='status-option-naoIniciado' value="NaoIniciado">Não iniciado</option>
                 </select>
-                <p>Prioridade: </p>
-                <select value={props.fpriority} onChange={(e)=> props.setFpriority(e.target.value)}>
-                  <option value='All'>Todos</option>
-                  <option value='Critico'>Crítico</option>
-                  <option value='Alta'>Alta</option>
-                  <option value='Media'>Media</option>
-                  <option value="Baixa">Baixa</option>
-                  <option value="SemPrioridade">Sem Prioridade</option>
+              </div>  
+              <div className='filter-priority'>
+                <p className='priority-title'>Prioridade: </p>
+                <select className='priority-select' value={props.fpriority} onChange={(e)=> props.setFpriority(e.target.value)}>
+                  <option className='priority-option-all' value='All'>Todos</option>
+                  <option className='priority-option-critico' value='Critico'>Crítico</option>
+                  <option className='priority-option-alta' value='Alta'>Alta</option>
+                  <option className='priority-option-media' value='Media'>Media</option>
+                  <option className='priority-option-baixa' value="Baixa">Baixa</option>
+                  <option className='priority-option-semPrioridade' value="SemPrioridade">Sem Prioridade</option>
                 </select>
               </div>
             </div>

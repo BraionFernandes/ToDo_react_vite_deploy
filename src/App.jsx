@@ -29,7 +29,7 @@ function App() {
     <>
       <header className='header'>
         <picture className='header-logo'>
-          <img className='header-logo-item' src="./src/assets/img/taskifyLogo.png" alt="Empire Logo" />
+          <img className='header-logo-img' src="./src/assets/img/taskifyLogo.png" alt="Empire Logo" />
         </picture>
         <nav className='header-nav'>
           <ul className='header-nav-lista'>
@@ -43,7 +43,7 @@ function App() {
       <main className='main'>
         <aside className='tarefaTools'>
           <div className='tarefaTools-divCreator'>
-            <button className='button-creator' onClick={handleOpenForm}>Criar Tarefa</button>
+            <button className='creator-button' onClick={handleOpenForm}>Criar Tarefa</button>
           </div>
           <div className='tarefaTools-divSearch'>
             <PesquisarTarefas dados={dados} search={search} setSearch={setSearch}/>
@@ -57,14 +57,14 @@ function App() {
         </aside>
         <section className='tarefas'>
           <div className='tarefasRegistradas'>
-            <table className='tabela'>
+            <table className='tarefas-tabela'>
               <thead className='tabela-head'>
-                <tr className='tabela-head-linha'>
-                  <th className='tabela-head-coluna-tarefa'>TAREFA</th>
-                  <th className='tabela-head-coluna-status'>STATUS</th>
-                  <th className='tabela-head-coluna-dataini'>DATA INICIO</th>
-                  <th className='tabela-head-coluna-datater'>DATA TERMINO</th>
-                  <th className='tabela-head-coluna-prioridade'>PRIORIDADE</th>
+                <tr className='head-linha'>
+                  <th className='head-coluna-tarefa'>TAREFA</th>
+                  <th className='head-coluna-status'>STATUS</th>
+                  <th className='head-coluna-dataini'>DATA INICIO</th>
+                  <th className='head-coluna-datater'>DATA TERMINO</th>
+                  <th className='head-coluna-prioridade'>PRIORIDADE</th>
                 </tr>
               </thead>
               <tbody className='tabela-body'>
@@ -113,15 +113,12 @@ function App() {
           </div>
         </section>
         {dadosEdit && dadosEdit.length > 0 &&(
-          <div className='editor'>
-            <div className='editor-div'>
-              <Editor dadosEdit={dadosEdit} setDadosEdit={setDadosEdit} dados={dados} setDados={setDados}/>
-            </div>
+          <div className='editorDiv'>
+            <Editor dadosEdit={dadosEdit} setDadosEdit={setDadosEdit} dados={dados} setDados={setDados}/>
           </div>
         )}
-
         {isFormVisible &&(
-          <div className='criadorTarefas'>
+          <div className='creatorDiv'>
               <GerenciadorTarefas dados={dados} setDados={setDados} status={status} setStatus={setStatus} priority={priority} setPriority={setPriority} setIsFormVisible={setIsFormVisible}/>
           </div>
         )}
