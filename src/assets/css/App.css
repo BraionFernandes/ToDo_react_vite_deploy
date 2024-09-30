@@ -6,12 +6,177 @@
     --fonte-padrao: "Open Sans", sans-serif;
     --fonte-destaque: "Kanit", sans-serif;
 }
-
-#root{
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: var(--fonte-padrao);
     font-size: 1em;
     font-weight: normal;
+}
+body{
+    background-color: #DFEAFF;
+}
+#root{
+    width: 100%;
+    height: 100vh;
+}
+/* CABEÇALHO SITE */
+.header{
+    background-color: #DFEAFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 5px;
+}
+/* CABEÇALHO SITE - LOGO DIV*/
+.header-logo{
+    width: 200px;
+    height: 50px;
+}
+.header-logo-img{
+    width: 100%;
+    height: 100%;
+}
+/* CABEÇALHO SITE - NAVEGAÇÃO*/
+.header-nav{
+    padding: 5px;
+}
+.header-nav-lista{
+    display: flex;
+    gap: 20px;
+}
+.header-nav-lista-item{
+    text-align: center;
+    list-style-type: none;
+    width: 40px;
+    height: 40px;
+}
+.header-nav-lista-item > a{
+    text-decoration: none;
+    color: #444444;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+}
+/* CONTEÚDO SITE */
+.main{
+    background-color: #fff;
+    width: 100vw;
+    height: 93.4vh;
+    border-radius: 20px 20px 0px 0px;
+    padding: 10px 15px;
+}
+/* CONTEÚDO SITE - CABEÇALHO */
+.tarefaTools{
+    display: flex;
+    gap: 15px;
+    padding: 5px;
+    align-items: center;
+}
+/* CONTEÚDO SITE - CABEÇALHO - CRIADOR DE TAREFAS */
+.creator-button{
+    font-family: var(--fonte-destaque);
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 125px;
+    height: 35px;
+    background-color: #2E97F2;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* CONTEÚDO SITE - CABEÇALHO - BUSCADOR (SEARCH) */
+.search-input{
+    width: 300px;
+    padding: 4px;
+    border-radius: 10px;
+    border-color: #2E97F2;
+    border-style: solid;
+    outline: none;
+}
+/* CONTEÚDO SITE - CABEÇALHO - FILTRO */
+.filter-button{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    background-color: #ffffff00;
+    color: #444444;
+    border: none;
+    font-size: 1.2em;
+}
+/* CONTEÚDO SITE - CABEÇALHO - ORDENADOR */
+.order-button{
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    background-color: #ffffff00;
+    color: #444444;
+    border: none;
+    font-size: 1.2em;
+}
+/* CONTEÚDO SITE - TAREFAS */
+.tarefas{
+    margin: 5px;
+    padding: 10px 0px;
+    border-top: 1px solid #d1d1d199;
+}
+.tarefas-tabela{
+    border-collapse: collapse;
+}
+/* CONTEÚDO SITE - TAREFAS - TABELA */
+th, td{
+    border: 2px solid #D0D4E4;
+    padding: 5px;
+}
+.head-coluna-tarefa{
+    width: 600px;
+}
+.head-coluna-status, .head-coluna-dataini, .head-coluna-datater{
+    width: 320px;
+}
+.head-coluna-prioridade{
+    width: 350px;
+}
+/* CONTEÚDO SITE - TAREFAS - TABELA - CORPO */
+.body-coluna-tarefa > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.tarefa-config{
+    background-color: #ffffff00;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.body-coluna-status{
+    font-family: var(--fonte-destaque);
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+.body-coluna-dataini, .body-coluna-datater{
+    font-family: var(--fonte-destaque);
+    font-size: 1.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+.body-coluna-prioridade{
+    font-family: var(--fonte-destaque);
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
 }

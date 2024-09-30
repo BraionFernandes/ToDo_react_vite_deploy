@@ -33,10 +33,10 @@ function App() {
         </picture>
         <nav className='header-nav'>
           <ul className='header-nav-lista'>
-            <li className='header-nav-lista-item material-symbols-outlined'><a href="#">history</a></li>
-            <li className='header-nav-lista-item material-symbols-outlined'><a href="#">help</a></li>
-            <li className='header-nav-lista-item material-symbols-outlined'><a href="#">settings</a></li>
-            <li className='header-nav-lista-item material-symbols-outlined'><a href="#">account_circle</a></li>
+            <li className='header-nav-lista-item'><a href="#" className='material-symbols-outlined'>history</a></li>
+            <li className='header-nav-lista-item'><a href="#" className='material-symbols-outlined'>help</a></li>
+            <li className='header-nav-lista-item'><a href="#" className='material-symbols-outlined'>settings</a></li>
+            <li className='header-nav-lista-item'><a href="#" className='material-symbols-outlined'>account_circle</a></li>
           </ul>
         </nav>
       </header>
@@ -75,12 +75,12 @@ function App() {
                           return true;
                       case "Feito":
                           return todo.status === "Feito";
-                      case "EmAndamento":
-                          return todo.status === "EmAndamento";
+                      case "Em andamento":
+                          return todo.status === "Em andamento";
                       case "Parado":
                           return todo.status === "Parado";
-                      case "NaoIniciado":
-                          return todo.status === "NaoIniciado";
+                      case "Nao iniciado":
+                          return todo.status === "Nao iniciado";
                       default:
                           return false;
                       }
@@ -97,8 +97,8 @@ function App() {
                           return todo.priority === "Media";
                       case "Baixa":
                           return todo.priority === "Baixa";
-                      case "SemPrioridade":
-                          return todo.priority === "SemPrioridade";
+                      case "Sem prioridade":
+                          return todo.priority === "Sem prioridade";
                       default:
                           return false;
                       }

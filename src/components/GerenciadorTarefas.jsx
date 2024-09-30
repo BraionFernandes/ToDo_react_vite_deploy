@@ -3,10 +3,10 @@ import React,{useState} from 'react'
 export default function GerenciadorTarefas(props){
 
     const [valor,setValor]=useState('');
-    const [status,setStatus]=useState('NaoIniciado');
+    const [status,setStatus]=useState('Nao iniciado');
     const [dataIni,setDataIni]=useState('');
     const [dataTer,setDataTer]=useState('');
-    const [priority,setPriority]=useState('SemPrioridade');
+    const [priority,setPriority]=useState('Sem prioridade');
     
     const addElemento=(text, status, inicio, termino, prioridade)=>{
         const newDados=[
@@ -46,9 +46,9 @@ export default function GerenciadorTarefas(props){
                     <select className='creator-status-select' name="status-select" id="status-select" value={status} onChange={(e)=> setStatus(e.target.value)}>
                         <option className='creator-status-option-msg' value="" disabled>Selecione um Status</option>
                         <option className='creator-status-option-feito' value="Feito">Feito</option>
-                        <option className='creator-status-option-emAndamento' value="EmAndamento">Em andamento</option>
+                        <option className='creator-status-option-emAndamento' value="Em andamento">Em andamento</option>
                         <option className='creator-status-option-parado' value="Parado">Parado</option>
-                        <option className='creator-status-option-naoIniciado' value="NaoIniciado">Não iniciado</option>
+                        <option className='creator-status-option-naoIniciado' value="Nao iniciado">Não iniciado</option>
                     </select>
                 </div>
                 <div className='creator-dataIni'>
@@ -67,7 +67,7 @@ export default function GerenciadorTarefas(props){
                         <option className='creator-priority-option-alta' value="Alta">Alta</option>
                         <option className='creator-priority-option-media' value="Media">Média</option>
                         <option className='creator-priority-option-baixa' value="Baixa">Baixa</option>
-                        <option className='creator-priority-option-semPrioridade' value="SemPrioridade">Sem prioridade</option>
+                        <option className='creator-priority-option-semPrioridade' value="Sem prioridade">Sem prioridade</option>
                     </select>
                 </div>
                 <input className='creator-form-inputSubmit' type="submit" value="+"/>
