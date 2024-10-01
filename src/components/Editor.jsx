@@ -56,9 +56,17 @@ export default function Editor(props){
             <div className='editor-tarefaDiv'>
                 {props.dadosEdit && props.dadosEdit.length > 0 &&(
                     <div className='editor-tarefa'>
-                        <p className='tarefa-title'>{props.dadosEdit[0].text}</p>
-                        <button className='tarefa-button-edit' onClick={isEditVisible ? handCloseEdit : handOpenEdit}><i className='material-symbols-outlined'>edit</i>Editar</button>
-                        <button className='tarefa-button-delet' onClick={DeletVisible ? handCloseDelet : handOpenDelet}><i className='material-symbols-outlined'>delete</i>Excluir</button>
+                        <div className='tarefa-text'>
+                            <p className='tarefa-title'>Tarefa: </p>
+                            <p className='tarefa-name'>{props.dadosEdit[0].text}</p>
+                        </div>
+                        <div className='tarefa-desc'>
+
+                        </div>
+                        <div className='tarefa-buttons'>
+                            <button className='tarefa-button-edit' onClick={isEditVisible ? handCloseEdit : handOpenEdit}><i className='material-symbols-outlined'>edit</i>Editar</button>
+                            <button className='tarefa-button-delet' onClick={DeletVisible ? handCloseDelet : handOpenDelet}><i className='material-symbols-outlined'>delete</i>Excluir</button>
+                        </div>
                     </div>
                 )}
             </div>
@@ -71,9 +79,13 @@ export default function Editor(props){
             )}
             {DeletVisible &&(
                 <div className='deleteDiv'>
-                    <p className='deleteDiv-tarefa-title'>Tem certeza de que deseja DELETAR está tarefa permanentemente?</p>
-                    <button className='deleteDiv-confirm' onClick={()=> removeElemento(props.dadosEdit[0].id)}>Confirmar</button>
-                    <button className='deleteDiv-cancel' onClick={DeletVisible ? handCloseDelet : handOpenDelet}>Cancelar</button>
+                    <div className='delete'>
+                        <p className='delete-title'>Tem certeza de que deseja DELETAR está tarefa permanentemente?</p>
+                        <div className='delete-buttons'>
+                            <button className='delete-confirm' onClick={()=> removeElemento(props.dadosEdit[0].id)}>Confirmar</button>
+                            <button className='delete-cancel' onClick={DeletVisible ? handCloseDelet : handOpenDelet}>Cancelar</button>
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

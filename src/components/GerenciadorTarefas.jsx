@@ -36,10 +36,11 @@ export default function GerenciadorTarefas(props){
     }
     return(
         <div className='creator'>
+            <p className='creator-p'>Criador de Tarefas</p>
             <form className='creator-form' onSubmit={handleSubmit}>
                 <div className='creator-name'>
                     <label className='creator-name-label' htmlFor="tarefaNome">Nome Da Tarefa: </label>
-                    <input className='creator-name-input' type="text"  name='tarefaNome' placeholder='Nome da nova tarefa...'  required value={valor}  onChange={(e)=>setValor(e.target.value)}/>
+                    <input className='creator-name-input' type="text"  name='tarefaNome' id='tarefaNome' placeholder='Nome da nova tarefa...'  required value={valor}  onChange={(e)=>setValor(e.target.value)}/>
                 </div>
                 <div className='creator-status'>
                     <label className='creator-status-label' htmlFor="status-select">Status da Tarefa: </label>
@@ -70,7 +71,7 @@ export default function GerenciadorTarefas(props){
                         <option className='creator-priority-option-semPrioridade' value="Sem prioridade">Sem prioridade</option>
                     </select>
                 </div>
-                <input className='creator-form-inputSubmit' type="submit" value="+"/>
+                <input className='creator-form-inputSubmit' type="submit" value="Adicionar"/>
             </form>
         </div>
     )

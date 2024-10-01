@@ -18,8 +18,9 @@ body{
     background-color: #DFEAFF;
 }
 #root{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    position: relative;
 }
 /* CABEÇALHO SITE */
 .header{
@@ -27,7 +28,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 7%;
     padding: 5px;
 }
 /* CABEÇALHO SITE - LOGO DIV*/
@@ -64,7 +65,7 @@ body{
 .main{
     background-color: #fff;
     width: 100vw;
-    height: 93.4vh;
+    height: 93%;
     border-radius: 20px 20px 0px 0px;
     padding: 10px 15px;
 }
@@ -107,6 +108,57 @@ body{
     color: #444444;
     border: none;
     font-size: 1.2em;
+    cursor: pointer;
+}
+.filter-div{
+    background-color: #00000044;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.filter{
+    background-color: #fff;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px 20px 0px 20px;
+    box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
+}
+.filter-p{
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    height: 10%;
+    text-align: center;
+    padding: 10px;
+}
+.filters{
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.status-title, .priority-title{
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-align: center;
+}
+.status-select, .priority-select{
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #2E97F2;
+    border-radius: 10px;
+    outline: none;
 }
 /* CONTEÚDO SITE - CABEÇALHO - ORDENADOR */
 .order-button{
@@ -117,6 +169,55 @@ body{
     color: #444444;
     border: none;
     font-size: 1.2em;
+    cursor: pointer;
+}
+.order-div{
+    background-color: #00000044;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.order{
+    background-color: #fff;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px 20px 0px 20px;
+    box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
+}
+.order-title{
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    height: 10%;
+    text-align: center;
+    padding: 10px;
+}
+.order-buttons{
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.order-buttons button{
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    background-color: #2E97F2;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 /* CONTEÚDO SITE - TAREFAS */
 .tarefas{
@@ -179,4 +280,205 @@ th, td{
     text-align: center;
     text-transform: uppercase;
     color: #fff;
+}
+/* OUTRAS ABAS - ABA CREATOR */
+.creatorDiv{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    background-color: #00000044;
+}
+.creator{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 600px;
+    height: 400px;
+    border-radius: 20px 20px 0px 20px;
+    padding: 5px;
+    box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
+}
+.creator-p{
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    text-align: center;
+}
+.creator-form{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.creator-name-label, .creator-status-label, .creator-dataIni-label, .creator-dataTer-label, .creator-priority-label{
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+.creator-name-input, .creator-status-select, .creator-dataIni-input, .creator-dataTer-input, .creator-priority-select{
+    border: 1px solid #2E97F2;
+    border-radius: 10px;
+    padding: 5px;
+    outline: none;
+}
+.creator-form-inputSubmit{
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin: 25px;
+    padding: 7px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2E97F2;
+    color: #fff;
+    cursor: pointer;
+}
+/* OUTRAS ABAS - ABA EDITOR */
+.editorDiv{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    background-color: #00000044;
+}
+.editor{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 600px;
+    height: 400px;
+    border-radius: 20px 20px 0px 20px;
+    padding: 5px;
+    box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
+}
+.editor-title{
+    height: 10%;
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    text-align: center;
+}
+.editor-tarefaDiv{
+    width: 100%;
+    height: 90%;
+}
+.editor-tarefa{
+    width: 100%;
+    height: 100%;
+}
+.tarefa-text{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    height: 10%;
+    padding: 0px 5px;
+}
+.tarefa-title{
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+.tarefa-name{
+    font-weight: 600;
+}
+.tarefa-desc{
+    width: 100%;
+    height: 72%;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 5px 0px;
+}
+.tarefa-buttons{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    height: 18%;
+}
+.tarefa-buttons button{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    background-color: #2E97F2;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+/* OUTRAS ABAS - ABA EDITOR - DELET */
+.deleteDiv{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    background-color: #00000044;
+}
+.delete{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 500px;
+    height: 150px;
+    border-radius: 20px 20px 0px 20px;
+    padding: 5px;
+    box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
+}
+.delete-title{
+    font-size: 1.2em;
+    font-weight: 600;
+    height: 40%;
+}
+.delete-buttons{
+    height: 60%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 10px;
+}
+.delete-buttons button{
+    height: 40px;
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.delete-confirm{
+    background-color: rgb(197, 0, 0);
+}
+.delete-cancel{
+    background-color: #979797;
 }

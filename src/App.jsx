@@ -112,6 +112,7 @@ function App() {
             </table>
           </div>
         </section>
+      </main>
         {dadosEdit && dadosEdit.length > 0 &&(
           <div className='editorDiv'>
             <Editor dadosEdit={dadosEdit} setDadosEdit={setDadosEdit} dados={dados} setDados={setDados}/>
@@ -122,7 +123,6 @@ function App() {
               <GerenciadorTarefas dados={dados} setDados={setDados} status={status} setStatus={setStatus} priority={priority} setPriority={setPriority} setIsFormVisible={setIsFormVisible}/>
           </div>
         )}
-      </main>
     </>
   )
 }
