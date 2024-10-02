@@ -18,6 +18,7 @@ export default function OrdenarTarefas(props){
           {isFiltroVisible &&(
               <div className='order-div'>
                 <div className='order'>
+                  <div className='order-close'><button className='order-close-button material-symbols-outlined' onClick={handCloseFiltro}>close</button></div>
                   <p className='order-title'>Ordem de Exibição:</p>
                   <div className='order-buttons'>
                     <button className='order-button-asc' onClick={()=> props.setSort("Asc")}>A - Z</button>

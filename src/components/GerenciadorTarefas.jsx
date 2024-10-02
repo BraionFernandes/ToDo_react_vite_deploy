@@ -34,8 +34,12 @@ export default function GerenciadorTarefas(props){
         setDataTer('');
         setPriority('');
     }
+    const ClosePage=()=>{
+        props.setIsFormVisible(false);
+    }
     return(
         <div className='creator'>
+            <div className='creator-close'><button className='creator-close-button material-symbols-outlined' onClick={ClosePage}>close</button></div>
             <p className='creator-p'>Criador de Tarefas</p>
             <form className='creator-form' onSubmit={handleSubmit}>
                 <div className='creator-name'>

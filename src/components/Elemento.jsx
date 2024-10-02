@@ -1,12 +1,16 @@
 import React,{useState} from 'react'
+import StatusConfig from './statusConfig';
 
 export default function Elemento(props){
-    // const completedElemento=(id)=>{
-    //     const newDados=[...props.dados]
-    //     newDados.map((elemento)=>elemento.id === id ? elemento.isCompleted = !elemento.isCompleted : elemento)
-    //     props.setDados(newDados);
-    // }
+    const [statusVisible,setStatusVisible]=useState('');
 
+    const OpenStatus=()=>{
+        setStatusVisible(true);
+    }
+    
+    const CloseStatus=()=>{
+        setStatusVisible(false);
+    }
     const statusColor = (status) => {
         switch (status) {
             case 'Feito':
@@ -45,12 +49,13 @@ export default function Elemento(props){
         props.setDadosEdit(filterDados);
         props.setDados(filternaoEditado);
     }
-
     return(
         <>
             <tr className='body-linha'>
                 <td className='body-coluna-tarefa'><div>{props.todo.text}<button className='tarefa-config' onClick={()=> editarElemento(props.todo.id)}><i className='material-symbols-outlined'>open_in_full</i> Abrir</button></div></td>
-                <td className='body-coluna-status' style={{backgroundColor: statusColor(props.todo.status)}}>{props.todo.status}</td>
+                <td className='body-coluna-status' style={{backgroundColor: statusColor(props.todo.status)}} onClick={statusVisible ? CloseStatus : OpenStatus}>{props.todo.status}{statusVisible &&(
+                    <StatusConfig/>
+                )}</td>
                 <td className='body-coluna-dataini'>{props.todo.dataIni === "" ? "Não Definido" : props.todo.dataIni}</td>
                 <td className='body-coluna-datater'>{props.todo.dataTer === "" ? "Não Definido" : props.todo.dataTer}</td>
                 <td className='body-coluna-prioridade' style={{backgroundColor: priorityColor(props.todo.priority)}}>{props.todo.priority}</td>

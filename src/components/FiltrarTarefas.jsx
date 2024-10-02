@@ -18,6 +18,7 @@ export default function FiltrarTarefas(props){
           {isFiltroVisible &&(
             <div className='filter-div'>
               <div className='filter'>
+                <div className='filter-close'><button className='filter-close-button material-symbols-outlined' onClick={handCloseFiltro}>close</button></div>
                 <p className='filter-p'>Filtro de Tarefas</p>
                 <div className='filters'>
                   <div className='filters-status'>

@@ -12,13 +12,16 @@ import {bancoEditor} from './assets/js/bancoEditor.js'
 function App() {
 
   const [dados,setDados]=bancoDados();
+
   const [dadosEdit,setDadosEdit]=bancoEditor();
+
   const [search,setSearch]=useState("");
   const [fstatus,setFstatus]=useState("All");
   const [fpriority,setFpriority]=useState("All");
   const [status,setStatus]=useState('');
   const [priority,setPriority]=useState('');
   const [sort,setSort]=useState("Asc");
+
   const [isFormVisible,setIsFormVisible]=useState(false);
 
   const handleOpenForm=()=>{
