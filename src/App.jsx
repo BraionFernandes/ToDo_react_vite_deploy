@@ -1,18 +1,18 @@
 import './assets/css/App.css'
 import { useState } from 'react'
+
 import Editor from './components/Editor.jsx'
 import GerenciadorTarefas from './components/GerenciadorTarefas.jsx'
 import PesquisarTarefas from './components/PesquisarTarefas.jsx'
 import FiltrarTarefas from './components/FiltrarTarefas.jsx'
 import OrdenarTarefas from './components/OrdenarTarefas.jsx'
 import Elemento from './components/Elemento.jsx'
+
 import {bancoDados} from './assets/js/bancoDados.js'
 import {bancoEditor} from './assets/js/bancoEditor.js'
 
 function App() {
-
   const [dados,setDados]=bancoDados();
-
   const [dadosEdit,setDadosEdit]=bancoEditor();
 
   const [search,setSearch]=useState("");

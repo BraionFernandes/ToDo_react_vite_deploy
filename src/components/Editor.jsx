@@ -6,6 +6,7 @@ export default function Editor(props){
     const [dataIni,setDataIni]=useState('');
     const [dataTer,setDataTer]=useState('');
     const [priority,setPriority]=useState('Sem prioridade');
+    
     const [isEditVisible,setIsEditVisible]=useState(false);
     const [DeletVisible,setDeletVisible]=useState(false);
 

@@ -1,16 +1,16 @@
-import React,{useState} from 'react'
-import StatusConfig from './statusConfig';
+import React,{useState} from 'react';
+
+import StatusEdit from './StatusEdit';
+import DataIniEdit from './dataIniEdit';
+import DataTerEdit from './dataTerEdit';
+import PriorityEdit from './PriorityEdit';
 
 export default function Elemento(props){
-    const [statusVisible,setStatusVisible]=useState('');
+    const [statusEdit,setStatusEdit]=useState(null);
+    const [dataIniEdit,setDataIniEdit]=useState([]);
+    const [dataTerEdit,setDataTerEdit]=useState([]);
+    const [priorityEdit,setPriorityEdit]=useState([]);
 
-    const OpenStatus=()=>{
-        setStatusVisible(true);
-    }
-    
-    const CloseStatus=()=>{
-        setStatusVisible(false);
-    }
     const statusColor = (status) => {
         switch (status) {
             case 'Feito':
@@ -25,6 +25,7 @@ export default function Elemento(props){
             return 'transparent';
         }
     };
+
     const priorityColor = (priority) => {
         switch (priority) {
             case 'Critico':
@@ -41,6 +42,7 @@ export default function Elemento(props){
             return 'transparent';
         }
     };
+
     const editarElemento=(id)=>{
         const newDados=[...props.dados]
         const filterDados=newDados.filter(dado => dado.id === id ? dado : null);
@@ -49,16 +51,46 @@ export default function Elemento(props){
         props.setDadosEdit(filterDados);
         props.setDados(filternaoEditado);
     }
+
+    const editarStatus=(id)=>{
+        const newDados = [...props.dados];
+        const filterDados = newDados.find(dado => dado.id === id);
+        setStatusEdit(filterDados);
+    }
+
+    const editarDataIni=(id)=>{
+        const newDados=[...props.dados]
+        const filterDados=newDados.filter(dado => dado.id === id ? dado : null);
+        setDataIniEdit(filterDados);
+    }
+
+    const editarDataTer=(id)=>{
+        const newDados=[...props.dados]
+        const filterDados=newDados.filter(dado => dado.id === id ? dado : null);
+        setDataTerEdit(filterDados);
+    }
+
+    const editarPriority=(id)=>{
+        const newDados=[...props.dados]
+        const filterDados=newDados.filter(dado => dado.id === id ? dado : null);
+        setPriorityEdit(filterDados);
+    }
     return(
         <>
             <tr className='body-linha'>
                 <td className='body-coluna-tarefa'><div>{props.todo.text}<button className='tarefa-config' onClick={()=> editarElemento(props.todo.id)}><i className='material-symbols-outlined'>open_in_full</i> Abrir</button></div></td>
-                <td className='body-coluna-status' style={{backgroundColor: statusColor(props.todo.status)}} onClick={statusVisible ? CloseStatus : OpenStatus}>{props.todo.status}{statusVisible &&(
-                    <StatusConfig/>
-                )}</td>
-                <td className='body-coluna-dataini'>{props.todo.dataIni === "" ? "Não Definido" : props.todo.dataIni}</td>
-                <td className='body-coluna-datater'>{props.todo.dataTer === "" ? "Não Definido" : props.todo.dataTer}</td>
-                <td className='body-coluna-prioridade' style={{backgroundColor: priorityColor(props.todo.priority)}}>{props.todo.priority}</td>
+                <td className='body-coluna-status' style={{backgroundColor: statusColor(props.todo.status)}} onClick={()=> editarStatus(props.todo.id)}>{props.todo.status}
+                    <StatusEdit statusEdit={statusEdit} setStatusEdit={setStatusEdit} dados={props.dados} setDados={props.setDados}/>
+                </td>
+                <td className='body-coluna-dataini' onClick={()=> editarDataIni(props.todo.id)}>{props.todo.dataIni === "" ? "Não Definido" : props.todo.dataIni}
+                    <DataIniEdit dataIniEdit={dataIniEdit} setDataIniEdit={setDataIniEdit} dados={props.dados} setDados={props.setDados}/>
+                </td>
+                <td className='body-coluna-datater' onClick={()=> editarDataTer(props.todo.id)}>{props.todo.dataTer === "" ? "Não Definido" : props.todo.dataTer}
+                    <DataTerEdit dataTerEdit={dataTerEdit} setDataTerEdit={setDataTerEdit} dados={props.dados} setDados={props.setDados}/>
+                </td>
+                <td className='body-coluna-prioridade' style={{backgroundColor: priorityColor(props.todo.priority)}} onClick={()=> editarPriority(props.todo.id)}>{props.todo.priority}
+                    <PriorityEdit priorityEdit={priorityEdit} setPriorityEdit={setPriorityEdit} dados={props.dados} setDados={props.setDados}/>
+                </td>
             </tr>
         </>
     )
