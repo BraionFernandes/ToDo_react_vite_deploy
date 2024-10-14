@@ -16,22 +16,18 @@ export default function Editor(props){
         props.setDados(filterDados);
         props.setDadosEdit("");
     }
-
     const handOpenEdit=()=>{
         setIsEditVisible(true);
     }
-
     const handCloseEdit=()=>{
         setIsEditVisible(false);
     }
     const handOpenDelet=()=>{
         setDeletVisible(true);
     }
-
     const handCloseDelet=()=>{
         setDeletVisible(false);
     }
-
     const addElemento=(text, status, dataIni, dataTer, priority)=>{
         const newDados=[
             ...props.dados,
@@ -62,14 +58,13 @@ export default function Editor(props){
         props.setDados(newDados);
         props.setDadosEdit("");
     }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!valor) return;
         addElemento(valor, status, dataIni, dataTer, priority);
         setValor("");
     }
-
+    
     return(
         <div className='editor'>
             <div className='editor-close'><button className='editor-close-button material-symbols-outlined' onClick={CloseEditor}>close</button></div>
@@ -78,11 +73,8 @@ export default function Editor(props){
                 {props.dadosEdit && props.dadosEdit.length > 0 &&(
                     <div className='editor-tarefa'>
                         <div className='tarefa-text'>
-                            <p className='tarefa-title'>Tarefa: </p>
+                            <p className='tarefa-title'>Tarefa nome:</p>
                             <p className='tarefa-name'>{props.dadosEdit[0].text}</p>
-                        </div>
-                        <div className='tarefa-desc'>
-
                         </div>
                         <div className='tarefa-buttons'>
                             <button className='tarefa-button-edit' onClick={isEditVisible ? handCloseEdit : handOpenEdit}><i className='material-symbols-outlined'>edit</i>Editar</button>

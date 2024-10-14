@@ -18,14 +18,15 @@ export default function StatusEdit(props){
             setStatus('');
         }
     }, [status]);
+    
     return(
         <div className="status-editor">
             {props.statusEdit &&(
-                <div className="status-editor-formDiv">
-                    <button onClick={() => setStatus('Feito')}>Feito</button>
-                    <button onClick={() => setStatus('Em andamento')}>Em andamento</button>
-                    <button onClick={() => setStatus('Parado')}>Parado</button>
-                    <button onClick={() => setStatus('Nao iniciado')}>Não iniciado</button>
+                <div className="status-editor-buttons">
+                    <button className="status-editor-feito" onClick={() => setStatus('Feito')}>Feito</button>
+                    <button className="status-editor-emAndamento" onClick={() => setStatus('Em andamento')}>Em andamento</button>
+                    <button className="status-editor-parado" onClick={() => setStatus('Parado')}>Parado</button>
+                    <button className="status-editor-naoIniciado" onClick={() => setStatus('Nao iniciado')}>Não iniciado</button>
                 </div>
             )}
         </div>

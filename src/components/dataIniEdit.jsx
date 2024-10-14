@@ -16,14 +16,12 @@ export default function DataIniEdit(props){
         props.setDados(updatedDados);
         props.setDataIniEdit('');
     }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!dataIni) return;
         addElemento(dataIni);
         setDataIni("");
     }
-
     return(
         <div className="dataIni-editor">
             {props.dataIniEdit && props.dataIniEdit.length > 0 &&(

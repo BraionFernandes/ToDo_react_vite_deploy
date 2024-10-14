@@ -1,5 +1,6 @@
-import './assets/css/App.css'
 import { useState } from 'react'
+
+import './assets/css/App.css'
 
 import Editor from './components/Editor.jsx'
 import GerenciadorTarefas from './components/GerenciadorTarefas.jsx'

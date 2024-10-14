@@ -37,6 +37,7 @@ export default function GerenciadorTarefas(props){
     const ClosePage=()=>{
         props.setIsFormVisible(false);
     }
+    
     return(
         <div className='creator'>
             <div className='creator-close'><button className='creator-close-button material-symbols-outlined' onClick={ClosePage}>close</button></div>

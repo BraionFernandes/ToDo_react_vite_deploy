@@ -9,7 +9,7 @@ export default function Elemento(props){
     const [statusEdit,setStatusEdit]=useState(null);
     const [dataIniEdit,setDataIniEdit]=useState([]);
     const [dataTerEdit,setDataTerEdit]=useState([]);
-    const [priorityEdit,setPriorityEdit]=useState([]);
+    const [priorityEdit,setPriorityEdit]=useState(null);
 
     const statusColor = (status) => {
         switch (status) {
@@ -25,7 +25,6 @@ export default function Elemento(props){
             return 'transparent';
         }
     };
-
     const priorityColor = (priority) => {
         switch (priority) {
             case 'Critico':
@@ -42,7 +41,6 @@ export default function Elemento(props){
             return 'transparent';
         }
     };
-
     const editarElemento=(id)=>{
         const newDados=[...props.dados]
         const filterDados=newDados.filter(dado => dado.id === id ? dado : null);
@@ -51,28 +49,24 @@ export default function Elemento(props){
         props.setDadosEdit(filterDados);
         props.setDados(filternaoEditado);
     }
-
     const editarStatus=(id)=>{
         const newDados = [...props.dados];
         const filterDados = newDados.find(dado => dado.id === id);
         setStatusEdit(filterDados);
     }
-
     const editarDataIni=(id)=>{
         const newDados=[...props.dados]
         const filterDados=newDados.filter(dado => dado.id === id ? dado : null);
         setDataIniEdit(filterDados);
     }
-
     const editarDataTer=(id)=>{
         const newDados=[...props.dados]
         const filterDados=newDados.filter(dado => dado.id === id ? dado : null);
         setDataTerEdit(filterDados);
     }
-
     const editarPriority=(id)=>{
         const newDados=[...props.dados]
-        const filterDados=newDados.filter(dado => dado.id === id ? dado : null);
+        const filterDados=newDados.find(dado => dado.id === id);
         setPriorityEdit(filterDados);
     }
     return(

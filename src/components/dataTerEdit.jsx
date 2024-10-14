@@ -16,14 +16,12 @@ export default function DataTerEdit(props){
         props.setDados(updatedDados);
         props.setDataTerEdit('');
     }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!dataTer) return;
         addElemento(dataTer);
         setDataTer("");
     }
-
     return(
         <div className="dataTer-editor">
             {props.dataTerEdit && props.dataTerEdit.length > 0 &&(
