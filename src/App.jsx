@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import './assets/css/App.css'
+import './assets/css/media-querie.css'
 
 import Editor from './components/Editor.jsx'
 import GerenciadorTarefas from './components/GerenciadorTarefas.jsx'
@@ -28,21 +29,12 @@ function App() {
   const handleOpenForm=()=>{
     setIsFormVisible(true);
   }
-
   return (
     <>
       <header className='header'>
         <picture className='header-logo'>
           <img className='header-logo-img' src="./src/assets/img/taskifyLogo.png" alt="Empire Logo" />
         </picture>
-        <nav className='header-nav'>
-          <ul className='header-nav-lista'>
-            <li className='header-nav-lista-item'><a href="#" className='material-symbols-outlined'>history</a></li>
-            <li className='header-nav-lista-item'><a href="#" className='material-symbols-outlined'>help</a></li>
-            <li className='header-nav-lista-item'><a href="#" className='material-symbols-outlined'>settings</a></li>
-            <li className='header-nav-lista-item'><a href="#" className='material-symbols-outlined'>account_circle</a></li>
-          </ul>
-        </nav>
       </header>
       <main className='main'>
         <aside className='tarefaTools'>

@@ -26,7 +26,7 @@ body{
 .header{
     background-color: #DFEAFF;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 7%;
     padding: 5px;
@@ -39,27 +39,6 @@ body{
 .header-logo-img{
     width: 100%;
     height: 100%;
-}
-/* CABEÇALHO SITE - NAVEGAÇÃO*/
-.header-nav{
-    padding: 5px;
-}
-.header-nav-lista{
-    display: flex;
-    gap: 20px;
-}
-.header-nav-lista-item{
-    text-align: center;
-    list-style-type: none;
-    width: 40px;
-    height: 40px;
-}
-.header-nav-lista-item > a{
-    text-decoration: none;
-    color: #444444;
-    width: 100%;
-    height: 100%;
-    font-size: 2em;
 }
 /* CONTEÚDO SITE */
 .main{
@@ -240,6 +219,7 @@ body{
     border-top: 1px solid #d1d1d199;
 }
 .tarefas-tabela{
+    width: 100%;
     border-collapse: collapse;
 }
 /* CONTEÚDO SITE - TAREFAS - TABELA */
@@ -248,13 +228,13 @@ th, td{
     padding: 5px;
 }
 .head-coluna-tarefa{
-    width: 600px;
+    width: 35%;
 }
 .head-coluna-status, .head-coluna-dataini, .head-coluna-datater{
-    width: 320px;
+    width: 15%;
 }
 .head-coluna-prioridade{
-    width: 350px;
+    width: 20%;
 }
 /* CONTEÚDO SITE - TAREFAS - TABELA - CORPO */
 .body-coluna-tarefa > div{
@@ -273,6 +253,7 @@ th, td{
     cursor: pointer;
 }
 .body-coluna-status{
+    position: relative;
     font-family: var(--fonte-destaque);
     font-size: 1.2em;
     font-weight: 600;
@@ -281,6 +262,7 @@ th, td{
     color: #fff;
 }
 .body-coluna-dataini, .body-coluna-datater{
+    position: relative;
     font-family: var(--fonte-destaque);
     font-size: 1.1em;
     font-weight: 600;
@@ -288,6 +270,7 @@ th, td{
     text-align: center;
 }
 .body-coluna-prioridade{
+    position: relative;
     font-family: var(--fonte-destaque);
     font-size: 1.2em;
     font-weight: 600;
@@ -298,7 +281,10 @@ th, td{
 /* CONTEÚDO SITE - TAREFAS - TABELA - CORPO - EDITOR - STATUS */
 .status-editor{
     position: absolute;
-    width: 300px;
+    width: 90%;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 .status-editor-buttons{
     background-color: #bdbdbd;
@@ -332,7 +318,10 @@ th, td{
 /* CONTEÚDO SITE - TAREFAS - TABELA - CORPO - EDITOR - DATAINI */
 .dataIni-editor{
     position: absolute;
-    width: 300px;
+    width: 90%;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 .dataIni-editor-form{
     background-color: #bdbdbd;
@@ -360,7 +349,10 @@ th, td{
 /* CONTEÚDO SITE - TAREFAS - TABELA - CORPO - EDITOR - DATATER */
 .dataTer-editor{
     position: absolute;
-    width: 300px;
+    width: 90%;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 .dataTer-editor-form{
     background-color: #bdbdbd;
@@ -386,7 +378,45 @@ th, td{
     cursor: pointer;
 }
 /* CONTEÚDO SITE - TAREFAS - TABELA - CORPO - EDITOR - PRIORITY */
-
+.priority-editor{
+    position: absolute;
+    width: 90%;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.priority-editor-buttons{
+    background-color: #bdbdbd;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+.priority-editor-buttons button{
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+.priority-editor-critico{
+    background-color: #10002b;
+}
+.priority-editor-alta{
+    background-color: #3c096c;
+}
+.priority-editor-media{
+    background-color: #7b2cbf;
+}
+.priority-editor-baixa{
+    background-color: #c77dff;
+}
+.priority-editor-semPrioridade{
+    background-color: #495057;
+}
 /* OUTRAS ABAS - ABA CREATOR */
 .creatorDiv{
     position: absolute;

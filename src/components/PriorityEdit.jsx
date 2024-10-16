@@ -23,16 +23,25 @@ export default function PriorityEdit(props){
     }, [priority]);
     
     return(
-        <div className="priority-editor">
+        <>
             {props.priorityEdit &&(
-                <div className="priority-editor-buttons">
-                    <button onClick={() => setPriority('Critico')}>Critico</button>
-                    <button onClick={() => setPriority('Alta')}>Alta</button>
-                    <button onClick={() => setPriority('Media')}>Media</button>
-                    <button onClick={() => setPriority('Baixa')}>Baixa</button>
-                    <button onClick={() => setPriority('Sem prioridade')}>Sem prioridade</button>
+                <div className="priority-editor">
+                    <div className="priority-container">
+                        <div className='editor-close'>
+                            <button className='editor-close-button material-symbols-outlined' onClick={()=> props.setPriorityEditClose(true)}>
+                                close
+                            </button>
+                        </div>
+                        <div className="priority-editor-buttons">
+                            <button className="priority-editor-critico" onClick={() => setPriority('Critico')}>Critico</button>
+                            <button className="priority-editor-alta" onClick={() => setPriority('Alta')}>Alta</button>
+                            <button className="priority-editor-media" onClick={() => setPriority('Media')}>Media</button>
+                            <button className="priority-editor-baixa" onClick={() => setPriority('Baixa')}>Baixa</button>
+                            <button className="priority-editor-semPrioridade" onClick={() => setPriority('Sem prioridade')}>Sem prioridade</button>
+                        </div>
+                    </div>
                 </div>
             )}
-        </div>
+        </>
     )
 }

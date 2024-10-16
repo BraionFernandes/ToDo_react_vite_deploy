@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@media screen and (max-width: 1100px){
+    /* CONTEÚDO SITE - TAREFAS - TABELA */
+    .head-coluna-tarefa{
+        width: 26%;
+    }
+    .head-coluna-status, .head-coluna-dataini, .head-coluna-datater{
+        width: 18%;
+    }
+    .head-coluna-prioridade{
+        width: 20%;
+    }
+    .status-editor, .dataIni-editor, .dataTer-editor, .priority-editor{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 850px){
+    .body-coluna-tarefa > div{
+        font-size: 1em;
+    }
+    .body-coluna-status, .body-coluna-dataini, .body-coluna-datater, .body-coluna-prioridade{
+        font-size: .9em;
+    }
+}
+@media screen and (max-width: 640px){
+    .search-input{
+        width: 200px;
+        font-size: .9em;
+    }
+    .filter-button, .order-button{
+        font-size: 1em;
+    }
+    .head-linha th{
+        font-size: .9em;
+    }
+    .status-editor{
+        top: 70%;
+        left: 50%;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+    }
+    .status-editor-buttons{
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 30%;
+    }
+    .status-editor-buttons button{
+        width: 60%;
+        padding: 5px;
+    }
+    .dataIni-editor{
+        top: 70%;
+        left: 50%;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+    }
+    .dataIni-editor-form{
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 30%;
+    }
+    .dataIni-editor-form-input{
+        width: 70%;
+        padding: 5px;
+    }
+}

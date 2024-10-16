@@ -21,7 +21,6 @@ export default function GerenciadorTarefas(props){
             },
         ];
         props.setDados(newDados);
-        console.log(newDados)
     }
     const handleSubmit = (e) => {
         e.preventDefault();
