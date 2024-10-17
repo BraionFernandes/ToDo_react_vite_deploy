@@ -25,19 +25,19 @@ export default function PriorityEdit(props){
     return(
         <>
             {props.priorityEdit &&(
-                <div className="priority-editor">
-                    <div className="priority-container">
-                        <div className='editor-close'>
-                            <button className='editor-close-button material-symbols-outlined' onClick={()=> props.setPriorityEditClose(true)}>
+                <div className="priority--editor">
+                    <div className="priority--editor--container">
+                        <div className='priority--editor--close--div close--div'>
+                            <button className='priority--editor--close--button close--button material-symbols-outlined' onClick={()=> props.setPriorityEditClose(true)}>
                                 close
                             </button>
                         </div>
-                        <div className="priority-editor-buttons">
-                            <button className="priority-editor-critico" onClick={() => setPriority('Critico')}>Critico</button>
-                            <button className="priority-editor-alta" onClick={() => setPriority('Alta')}>Alta</button>
-                            <button className="priority-editor-media" onClick={() => setPriority('Media')}>Media</button>
-                            <button className="priority-editor-baixa" onClick={() => setPriority('Baixa')}>Baixa</button>
-                            <button className="priority-editor-semPrioridade" onClick={() => setPriority('Sem prioridade')}>Sem prioridade</button>
+                        <div className="priority--editor--buttons">
+                            <button className="priority--editor--button--critico" onClick={() => setPriority('Critico')}>Critico</button>
+                            <button className="priority--editor--button--alta" onClick={() => setPriority('Alta')}>Alta</button>
+                            <button className="priority--editor--button--media" onClick={() => setPriority('Media')}>Media</button>
+                            <button className="priority--editor--button--baixa" onClick={() => setPriority('Baixa')}>Baixa</button>
+                            <button className="priority--editor--button--semPrioridade" onClick={() => setPriority('Sem prioridade')}>Sem prioridade</button>
                         </div>
                     </div>
                 </div>

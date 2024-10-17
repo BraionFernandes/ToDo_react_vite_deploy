@@ -95,18 +95,18 @@ export default function Elemento(props){
     }
     return(
         <>
-            <tr className='body-linha'>
-                <td className='body-coluna-tarefa'><div>{props.todo.text}<button className='tarefa-config' onClick={()=> editarElemento(props.todo.id)}><i className='material-symbols-outlined'>open_in_full</i> Abrir</button></div></td>
-                <td className='body-coluna-status' style={{backgroundColor: statusColor(props.todo.status)}} onClick={()=> editarStatus(props.todo.id)}>{props.todo.status}
+            <tr className='tabela--body--linha'>
+                <td className='tabela--body--coluna--nome'><div>{props.todo.text}<button className='nome--config' onClick={()=> editarElemento(props.todo.id)}><i className='material-symbols-outlined'>open_in_full</i> Abrir</button></div></td>
+                <td className='tabela--body--coluna--status' style={{backgroundColor: statusColor(props.todo.status)}} onClick={()=> editarStatus(props.todo.id)}>{props.todo.status}
                     <StatusEdit statusEdit={statusEdit} setStatusEdit={setStatusEdit} dados={props.dados} setDados={props.setDados} setStatusEditClose={setStatusEditClose}/>   
                 </td>
-                <td className='body-coluna-dataini' onClick={()=> editarDataIni(props.todo.id)}>{props.todo.dataIni === "" ? "Não Definido" : props.todo.dataIni}
+                <td className='tabela--body--coluna--dataini' onClick={()=> editarDataIni(props.todo.id)}>{props.todo.dataIni === "" ? "Não Definido" : props.todo.dataIni}
                     <DataIniEdit dataIniEdit={dataIniEdit} setDataIniEdit={setDataIniEdit} dados={props.dados} setDados={props.setDados} setDataIniEditClose={setDataIniEditClose}/>
                 </td>
-                <td className='body-coluna-datater' onClick={()=> editarDataTer(props.todo.id)}>{props.todo.dataTer === "" ? "Não Definido" : props.todo.dataTer}
+                <td className='tabela--body--coluna--datater' onClick={()=> editarDataTer(props.todo.id)}>{props.todo.dataTer === "" ? "Não Definido" : props.todo.dataTer}
                     <DataTerEdit dataTerEdit={dataTerEdit} setDataTerEdit={setDataTerEdit} dados={props.dados} setDados={props.setDados} setDataTerEditClose={setDataTerEditClose}/>
                 </td>
-                <td className='body-coluna-prioridade' style={{backgroundColor: priorityColor(props.todo.priority)}} onClick={()=> editarPriority(props.todo.id)}>{props.todo.priority}
+                <td className='tabela--body--coluna--prioridade' style={{backgroundColor: priorityColor(props.todo.priority)}} onClick={()=> editarPriority(props.todo.id)}>{props.todo.priority}
                     <PriorityEdit priorityEdit={priorityEdit} setPriorityEdit={setPriorityEdit} dados={props.dados} setDados={props.setDados} setPriorityEditClose={setPriorityEditClose}/>
                 </td>
             </tr>

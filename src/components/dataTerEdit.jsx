@@ -25,17 +25,17 @@ export default function DataTerEdit(props){
     return(
         <>
             {props.dataTerEdit && props.dataTerEdit.length > 0 &&(
-                <div className="dataTer-editor">
-                    <div className="dataTer-container">
-                        <div className='dataTer-close'>
-                            <button className='dataTer-close-button material-symbols-outlined' onClick={()=> props.setDataTerEditClose(true)}>
+                <div className="dataTer--editor">
+                    <div className="dataTer--editor--container">
+                        <div className='dataTer-editor--close--div close--div'>
+                            <button className='dataTer--editor--close--button close--button material-symbols-outlined' onClick={()=> props.setDataTerEditClose(true)}>
                                 close
                             </button>
                         </div>
-                        <div className="dataTer-editor-formDiv">
-                            <form onSubmit={handleSubmit} className="dataTer-editor-form">
-                                <input className='dataTer-editor-form-input' type="date" name='tarefaDataTer' id='tarefaDataTer' value={dataTer}  onChange={(e)=>setDataTer(e.target.value)}/>
-                                <input type="submit" className='dataTer-editor-form-inputSubmit' value="Alterar" />
+                        <div className="dataTer--editor--form--div">
+                            <form onSubmit={handleSubmit} className="dataTer--editor--form">
+                                <input className='dataTer--editor--form--input' type="date" name='tarefaDataTer' id='tarefaDataTer' value={dataTer}  onChange={(e)=>setDataTer(e.target.value)}/>
+                                <input type="submit" className='dataTer--editor--form--inputSubmit' value="Alterar" />
                             </form>
                         </div>
                     </div>

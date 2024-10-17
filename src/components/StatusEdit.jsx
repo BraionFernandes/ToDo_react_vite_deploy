@@ -23,18 +23,18 @@ export default function StatusEdit(props) {
     return (
         <>
             {props.statusEdit &&(
-                <div className="status-editor">
-                    <div className="status-container">
-                        <div className='editor-close'>
-                            <button className='editor-close-button material-symbols-outlined' onClick={()=> props.setStatusEditClose(true)}>
+                <div className="status--editor">
+                    <div className="status--editor--container">
+                        <div className='status--editor--close--div close--div'>
+                            <button className='status--editor--close--button close--button material-symbols-outlined' onClick={()=> props.setStatusEditClose(true)}>
                                 close
                             </button>
                         </div>
-                        <div className="status-editor-buttons">
-                            <button className="status-editor-feito" onClick={() => setStatus('Feito')}>Feito</button>
-                            <button className="status-editor-emAndamento" onClick={() => setStatus('Em andamento')}>Em andamento</button>
-                            <button className="status-editor-parado" onClick={() => setStatus('Parado')}>Parado</button>
-                            <button className="status-editor-naoIniciado" onClick={() => setStatus('Nao iniciado')}>Não iniciado</button>
+                        <div className="status--editor--buttons">
+                            <button className="status--editor--button--feito" onClick={() => setStatus('Feito')}>Feito</button>
+                            <button className="status--editor--button--emAndamento" onClick={() => setStatus('Em andamento')}>Em andamento</button>
+                            <button className="status--editor--button--parado" onClick={() => setStatus('Parado')}>Parado</button>
+                            <button className="status--editor--button--naoIniciado" onClick={() => setStatus('Nao iniciado')}>Não iniciado</button>
                         </div>
                     </div>
                 </div>

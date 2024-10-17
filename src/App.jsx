@@ -32,38 +32,38 @@ function App() {
   return (
     <>
       <header className='header'>
-        <picture className='header-logo'>
-          <img className='header-logo-img' src="./src/assets/img/taskifyLogo.png" alt="Empire Logo" />
+        <picture className='header--picture'>
+          <img className='header--picture--logo' src="./src/assets/img/taskifyLogo.png" alt="Empire Logo" />
         </picture>
       </header>
       <main className='main'>
-        <aside className='tarefaTools'>
-          <div className='tarefaTools-divCreator'>
-            <button className='creator-button' onClick={handleOpenForm}>Criar Tarefa</button>
+        <aside className='todo--config'>
+          <div className='todo--config--creator'>
+            <button className='creator--button' onClick={handleOpenForm}>Criar Tarefa</button>
           </div>
-          <div className='tarefaTools-divSearch'>
+          <div className='todo--config--search'>
             <PesquisarTarefas dados={dados} search={search} setSearch={setSearch}/>
           </div>
-          <div className='tarefaTools-divFilter'>
+          <div className='todo--config--filter'>
             <FiltrarTarefas fstatus={fstatus} setFstatus={setFstatus} fpriority={fpriority} setFpriority={setFpriority}/>
           </div>
-          <div className='tarefaTools-divOrder'>
+          <div className='todo--config--order'>
             <OrdenarTarefas setSort={setSort}/>
           </div>
         </aside>
         <section className='tarefas'>
-          <div className='tarefasRegistradas'>
-            <table className='tarefas-tabela'>
-              <thead className='tabela-head'>
-                <tr className='head-linha'>
-                  <th className='head-coluna-tarefa'>TAREFA</th>
-                  <th className='head-coluna-status'>STATUS</th>
-                  <th className='head-coluna-dataini'>DATA INICIO</th>
-                  <th className='head-coluna-datater'>DATA TERMINO</th>
-                  <th className='head-coluna-prioridade'>PRIORIDADE</th>
+          <div className='tarefas--registradas'>
+            <table className='tabela'>
+              <thead className='tabela--head'>
+                <tr className='tabela--head--linha'>
+                  <th className='tabela--head--coluna--tarefa'>TAREFA</th>
+                  <th className='tabela--head--coluna--status'>STATUS</th>
+                  <th className='tabela--head--coluna--dataini'>DATA INICIO</th>
+                  <th className='tabela--head--coluna--datater'>DATA TERMINO</th>
+                  <th className='tabela--head--coluna--prioridade'>PRIORIDADE</th>
                 </tr>
               </thead>
-              <tbody className='tabela-body'>
+              <tbody className='tabela--body'>
                 {dados
                   .filter((todo) => {
                     switch (fstatus) {
@@ -110,12 +110,12 @@ function App() {
         </section>
       </main>
         {dadosEdit && dadosEdit.length > 0 &&(
-          <div className='editorDiv'>
+          <div className='editor--container'>
             <Editor dadosEdit={dadosEdit} setDadosEdit={setDadosEdit} dados={dados} setDados={setDados}/>
           </div>
         )}
         {isFormVisible &&(
-          <div className='creatorDiv'>
+          <div className='creator--container'>
               <GerenciadorTarefas dados={dados} setDados={setDados} status={status} setStatus={setStatus} priority={priority} setPriority={setPriority} setIsFormVisible={setIsFormVisible}/>
           </div>
         )}

@@ -1,44 +1,4 @@
-@charset "UTF-8";
-
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-:root{
-    --fonte-padrao: "Open Sans", sans-serif;
-    --fonte-destaque: "Kanit", sans-serif;
-}
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: var(--fonte-padrao);
-    font-size: 1em;
-    font-weight: normal;
-}
-body{
-    background-color: #DFEAFF;
-}
-#root{
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-}
-/* ESTILO TOTAL */
-.close--div{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    width: 100%;
-    padding: 5px;
-}
-.close--button{
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(255, 49, 49);
-    color: #fff;
-    padding: 3px;
-    cursor: pointer;
-}
-/* ESTILO CABEÇALHO */
+/* CABEÇALHO SITE */
 .header{
     background-color: #DFEAFF;
     display: flex;
@@ -47,15 +7,16 @@ body{
     height: 7%;
     padding: 5px;
 }
-.header--picture{
+/* CABEÇALHO SITE - LOGO DIV*/
+.header-logo{
     width: 200px;
     height: 50px;
 }
-.header--picture--logo{
+.header-logo-img{
     width: 100%;
     height: 100%;
 }
-/* MAIN */
+/* CONTEÚDO SITE */
 .main{
     background-color: #fff;
     width: 100vw;
@@ -63,15 +24,15 @@ body{
     border-radius: 20px 20px 0px 0px;
     padding: 10px 15px;
 }
-/* MAIN - CABEÇALHO */
-.todo--config{
+/* CONTEÚDO SITE - CABEÇALHO */
+.tarefaTools{
     display: flex;
     gap: 15px;
     padding: 5px;
     align-items: center;
 }
-/* MAIN - CABEÇALHO - CREATOR */
-.creator--button{
+/* CONTEÚDO SITE - CABEÇALHO - CRIADOR DE TAREFAS */
+.creator-button{
     font-family: var(--fonte-destaque);
     font-size: 1em;
     font-weight: 600;
@@ -84,8 +45,8 @@ body{
     border-radius: 10px;
     cursor: pointer;
 }
-/* MAIN - CABEÇALHO - SEARCH */
-.search--input{
+/* CONTEÚDO SITE - CABEÇALHO - BUSCADOR (SEARCH) */
+.search-input{
     width: 300px;
     padding: 4px;
     border-radius: 10px;
@@ -93,8 +54,8 @@ body{
     border-style: solid;
     outline: none;
 }
-/* MAIN - CABEÇALHO - FILTRO */
-.filter--button{
+/* CONTEÚDO SITE - CABEÇALHO - FILTRO */
+.filter-button{
     display: flex;
     gap: 4px;
     align-items: center;
@@ -116,12 +77,12 @@ body{
     border-radius: 20px 20px 0px 20px;
     box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
 }
-.filter--close--div{
+.filter-close{
     display: flex;
     justify-content: end;
-    padding: 10px;
+    padding: 10px 10px;
 }
-.filter--close--button{
+.filter-close-button{
     font-size: 1.5em;
     font-weight: 600;
     background-color: rgb(255, 49, 49);
@@ -131,7 +92,7 @@ body{
     border-radius: 10px;
     cursor: pointer;
 }
-.filter--tittle{
+.filter-p{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     font-size: 1.2em;
@@ -147,22 +108,22 @@ body{
     justify-content: center;
     gap: 20px;
 }
-.filters--status--title, .filters--priority--title{
+.status-title, .priority-title{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     font-size: 1.2em;
     text-transform: uppercase;
     text-align: center;
 }
-.filters--status--select, .filters--priority--select{
+.status-select, .priority-select{
     margin: 5px;
     padding: 5px;
     border: 1px solid #2E97F2;
     border-radius: 10px;
     outline: none;
 }
-/* MAIN - CABEÇALHO - ORDENADOR */
-.order--button{
+/* CONTEÚDO SITE - CABEÇALHO - ORDENADOR */
+.order-button{
     display: flex;
     gap: 2px;
     align-items: center;
@@ -184,12 +145,12 @@ body{
     border-radius: 20px 20px 0px 20px;
     box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
 }
-.order--close--div{
+.order-close{
     display: flex;
     justify-content: end;
     padding: 10px 10px;
 }
-.order--close--button{
+.order-close-button{
     font-size: 1.5em;
     font-weight: 600;
     background-color: rgb(255, 49, 49);
@@ -199,7 +160,7 @@ body{
     border-radius: 10px;
     cursor: pointer;
 }
-.order--title{
+.order-title{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     font-size: 1.2em;
@@ -208,14 +169,14 @@ body{
     text-align: center;
     padding: 10px;
 }
-.order--buttons{
+.order-buttons{
     height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
-.order--buttons button{
+.order-buttons button{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     font-size: 1.2em;
@@ -227,39 +188,39 @@ body{
     border-radius: 10px;
     cursor: pointer;
 }
-/* MAIN - TAREFAS */
+/* CONTEÚDO SITE - TAREFAS */
 .tarefas{
     margin: 5px;
     padding: 10px 0px;
     border-top: 1px solid #d1d1d199;
 }
-.tabela{
+.tarefas-tabela{
     width: 100%;
     border-collapse: collapse;
 }
-/* MAIN - TAREFAS - TABELA */
+/* CONTEÚDO SITE - TAREFAS - TABELA */
 th, td{
     border: 2px solid #D0D4E4;
     padding: 5px;
 }
-.tabela--head--coluna--tarefa{
+.head-coluna-tarefa{
     width: 35%;
 }
-.tabela--head--coluna--status, .tabela--head--coluna--dataini, .tabela--head--coluna--datater{
+.head-coluna-status, .head-coluna-dataini, .head-coluna-datater{
     width: 15%;
 }
-.tabela--head--coluna--prioridade{
+.head-coluna-prioridade{
     width: 20%;
 }
-/* MAIN - TAREFAS - TABELA - CORPO */
-.tabela--body--coluna--nome > div{
+/* CONTEÚDO SITE - TAREFAS - TABELA - CORPO */
+.body-coluna-tarefa > div{
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 1.1em;
     font-weight: 500;
 }
-.nome--config{
+.tarefa-config{
     background-color: #ffffff00;
     border: none;
     display: flex;
@@ -267,7 +228,7 @@ th, td{
     gap: 8px;
     cursor: pointer;
 }
-.tabela--body--coluna--status{
+.body-coluna-status{
     position: relative;
     font-family: var(--fonte-destaque);
     font-size: 1.2em;
@@ -276,7 +237,7 @@ th, td{
     text-transform: uppercase;
     color: #fff;
 }
-.tabela--body--coluna--dataini, .tabela--body--coluna--datater{
+.body-coluna-dataini, .body-coluna-datater{
     position: relative;
     font-family: var(--fonte-destaque);
     font-size: 1.1em;
@@ -284,7 +245,7 @@ th, td{
     text-transform: uppercase;
     text-align: center;
 }
-.tabela--body--coluna--prioridade{
+.body-coluna-prioridade{
     position: relative;
     font-family: var(--fonte-destaque);
     font-size: 1.2em;
@@ -294,26 +255,41 @@ th, td{
     color: #fff;
 }
 /* CONTEÚDO SITE - TAREFAS - TABELA - CORPO - EDITOR - STATUS */
-.status--editor{
+.status-editor{
     position: absolute;
     width: 90%;
     top: 100%;
     left: 50%;
     transform: translate(-50%, 0);
 }
-.status--editor--container{
+.status-container{
     background-color: #bdbdbd;
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
 }
-.status--editor--buttons{
+.status-close{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+}
+.status-close button{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 49, 49);
+    color: #fff;
+    padding: 3px;
+    cursor: pointer;
+}
+.status-editor-buttons{
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-.status--editor--buttons button{
+.status-editor-buttons button{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     text-transform: uppercase;
@@ -323,42 +299,39 @@ th, td{
     padding: 5px;
     cursor: pointer;
 }
-.status--editor--button--feito{
+.status-editor-feito{
     background-color: #80b918;
 }
-.status--editor--button--emAndamento{
+.status-editor-emAndamento{
     background-color: #f5cc00;
 }
-.status--editor--button--parado{
+.status-editor-parado{
     background-color: #9d0208;
 }
-.status--editor--button--naoIniciado{
+.status-editor-naoIniciado{
     background-color: #495057;
 }
 /* CONTEÚDO SITE - TAREFAS - TABELA - CORPO - EDITOR - DATAINI */
-.dataIni--editor{
+.dataIni-editor{
     position: absolute;
     width: 90%;
     top: 100%;
     left: 50%;
     transform: translate(-50%, 0);
 }
-.dataIni--editor--container{
+.dataIni-editor-form{
     background-color: #bdbdbd;
-    padding: 10px;
-}
-.dataIni--editor--form{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding-top: 5px;
+    padding: 10px;
 }
-.dataIni--editor--form--input{
+.dataIni-editor-form-input{
     border: 1px solid #2E97F2;
     border-radius: 10px;
     outline: none;
 }
-.dataIni--editor--form--inputSubmit{
+.dataIni-editor-form-inputSubmit{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     text-transform: uppercase;
@@ -370,29 +343,26 @@ th, td{
     cursor: pointer;
 }
 /* CONTEÚDO SITE - TAREFAS - TABELA - CORPO - EDITOR - DATATER */
-.dataTer--editor{
+.dataTer-editor{
     position: absolute;
     width: 90%;
     top: 100%;
     left: 50%;
     transform: translate(-50%, 0);
 }
-.dataTer--editor--container{
+.dataTer-editor-form{
     background-color: #bdbdbd;
-    padding: 10px;
-}
-.dataTer--editor--form{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding-top: 5px;
+    padding: 10px;
 }
-.dataTer--editor--form--input{
+.dataTer-editor-form-input{
     border: 1px solid #2E97F2;
     border-radius: 10px;
     outline: none;
 }
-.dataTer--editor--form--inputSubmit{
+.dataTer-editor-form-inputSubmit{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     text-transform: uppercase;
@@ -404,24 +374,21 @@ th, td{
     cursor: pointer;
 }
 /* CONTEÚDO SITE - TAREFAS - TABELA - CORPO - EDITOR - PRIORITY */
-.priority--editor{
+.priority-editor{
     position: absolute;
     width: 90%;
     top: 100%;
     left: 50%;
     transform: translate(-50%, 0);
 }
-.priority--editor--container{
+.priority-editor-buttons{
     background-color: #bdbdbd;
-    padding: 10px;
-}
-.priority--editor--buttons{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding-top: 5px;
+    padding: 10px;
 }
-.priority--editor--buttons button{
+.priority-editor-buttons button{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     text-transform: uppercase;
@@ -431,23 +398,23 @@ th, td{
     padding: 5px;
     cursor: pointer;
 }
-.priority--editor--button--critico{
+.priority-editor-critico{
     background-color: #10002b;
 }
-.priority--editor--button--alta{
+.priority-editor-alta{
     background-color: #3c096c;
 }
-.priority--editor--button--media{
+.priority-editor-media{
     background-color: #7b2cbf;
 }
-.priority--editor--button--baixa{
+.priority-editor-baixa{
     background-color: #c77dff;
 }
-.priority--editor--button--semPrioridade{
+.priority-editor-semPrioridade{
     background-color: #495057;
 }
 /* OUTRAS ABAS - ABA CREATOR */
-.creator--container{
+.creatorDiv{
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -469,12 +436,12 @@ th, td{
     padding: 5px;
     box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
 }
-.creator--close--div{
+.creator-close{
     display: flex;
     justify-content: end;
     padding: 5px 10px;
 }
-.creator--close--button{
+.creator-close-button{
     font-size: 1.5em;
     font-weight: 600;
     background-color: rgb(255, 49, 49);
@@ -484,33 +451,33 @@ th, td{
     border-radius: 10px;
     cursor: pointer;
 }
-.creator--tittle{
+.creator-p{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     font-size: 1.4em;
     text-transform: uppercase;
     text-align: center;
 }
-.creator--form{
+.creator-form{
     display: flex;
     gap: 15px;
     flex-direction: column;
     align-items: center;
     padding: 10px;
 }
-.creator--name--label, .creator--status--label, .creator--dataIni--label, .creator--dataTer--label, .creator--priority--label{
+.creator-name-label, .creator-status-label, .creator-dataIni-label, .creator-dataTer-label, .creator-priority-label{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     font-size: 1.2em;
     text-transform: uppercase;
 }
-.creator--name--input, .creator--status--select, .creator--dataIni--input, .creator--dataTer--input, .creator--priority--select{
+.creator-name-input, .creator-status-select, .creator-dataIni-input, .creator-dataTer-input, .creator-priority-select{
     border: 1px solid #2E97F2;
     border-radius: 10px;
     padding: 5px;
     outline: none;
 }
-.creator--form--inputSubmit{
+.creator-form-inputSubmit{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     font-size: 1.2em;
@@ -524,7 +491,7 @@ th, td{
     cursor: pointer;
 }
 /* OUTRAS ABAS - ABA EDITOR */
-.editor--container{
+.editorDiv{
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -546,13 +513,13 @@ th, td{
     padding: 5px;
     box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
 }
-.editor--close--div{
+.editor-close{
     height: 19%;
     display: flex;
     justify-content: end;
     padding: 10px 10px;
 }
-.editor--close--button{
+.editor-close-button{
     font-size: 1.5em;
     font-weight: 600;
     background-color: rgb(255, 49, 49);
@@ -562,7 +529,7 @@ th, td{
     border-radius: 10px;
     cursor: pointer;
 }
-.editor--title{
+.editor-title{
     height: 11%;
     font-family: var(--fonte-destaque);
     font-weight: 600;
@@ -570,15 +537,15 @@ th, td{
     text-transform: uppercase;
     text-align: center;
 }
-.editor--tarefa--div{
+.editor-tarefaDiv{
     width: 100%;
     height: 70%;
 }
-.editor--tarefa{
+.editor-tarefa{
     width: 100%;
     height: 100%;
 }
-.editor--tarefa--text{
+.tarefa-text{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -587,24 +554,24 @@ th, td{
     height: 70%;
     padding: 0px 5px;
 }
-.editor--tarefa--title{
+.tarefa-title{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     font-size: 1.2em;
     text-transform: uppercase;
     text-align: center;
 }
-.editor--tarefa--name{
+.tarefa-name{
     font-weight: 600;
 }
-.editor--tarefa--buttons{
+.tarefa-buttons{
     display: flex;
     align-items: end;
     justify-content: end;
     width: 100%;
     height: 30%;
 }
-.editor--tarefa--buttons button{
+.tarefa-buttons button{
     display: flex;
     align-items: center;
     height: 40px;
@@ -621,7 +588,7 @@ th, td{
     cursor: pointer;
 }
 /* OUTRAS ABAS - ABA EDITOR - FORM */
-.editor--form--container{
+.editor-formDiv{
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -631,7 +598,7 @@ th, td{
     transform: translate(-50%, -50%);
     background-color: #00000044;
 }
-.editor--form--body{
+.editor-form-body{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -643,12 +610,12 @@ th, td{
     padding: 5px;
     box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
 }
-.editor--form--body--close--div{
+.editor-form-body-close{
     display: flex;
     justify-content: end;
     padding: 5px 5px;
 }
-.editor--form--close--button{
+.editor-form-close-button{
     font-size: 1.5em;
     font-weight: 600;
     background-color: rgb(255, 49, 49);
@@ -658,27 +625,27 @@ th, td{
     border-radius: 10px;
     cursor: pointer;
 }
-.editor--form{
+.editor-form{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     padding: 10px;
 }
-.editor--form--name--label, .editor--form--status--label, .editor--form--dataIni--label, .editor--form--dataTer--label, .editor--form--priority--label{
+.editor-form-name-label, .editor-form-status-label, .editor-form-dataIni-label, .editor-form-dataTer-label, .editor-form-priority-label{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     font-size: 1.2em;
     text-transform: uppercase;
     padding: 3px;
 }
-.editor--form--name--input, .editor--form--status--select, .editor--form--dataIni--input, .editor--form--dataTer--input, .editor--form--priority--select{
+.editor-form-name-input, .editor-form-status-select, .editor-form-dataIni-input, .editor-form-dataTer-input, .editor-form-priority-select{
     padding: 3px;
     border-radius: 10px;
     border: 1px solid #2E97F2;
     outline: none;
 }
-.editor--form--input{
+.editor-form-inputSubmit{
     font-family: var(--fonte-destaque);
     font-weight: 600;
     font-size: 1.3em;
@@ -692,7 +659,7 @@ th, td{
     cursor: pointer;
 }
 /* OUTRAS ABAS - ABA EDITOR - DELET */
-.delete--container{
+.deleteDiv{
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -714,19 +681,19 @@ th, td{
     padding: 5px;
     box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
 }
-.delete--title{
+.delete-title{
     font-size: 1.2em;
     font-weight: 600;
     height: 40%;
 }
-.delete--buttons{
+.delete-buttons{
     height: 60%;
     display: flex;
     justify-content: end;
     align-items: center;
     margin: 10px;
 }
-.delete--buttons button{
+.delete-buttons button{
     height: 40px;
     font-family: var(--fonte-destaque);
     font-weight: 600;
@@ -739,9 +706,9 @@ th, td{
     border-radius: 10px;
     cursor: pointer;
 }
-.delete--button--confirm{
+.delete-confirm{
     background-color: rgb(197, 0, 0);
 }
-.delete--button--cancel{
+.delete-cancel{
     background-color: #979797;
 }
