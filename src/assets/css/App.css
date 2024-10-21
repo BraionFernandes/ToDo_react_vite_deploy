@@ -84,6 +84,37 @@ body{
     border-radius: 10px;
     cursor: pointer;
 }
+/* MAIN - CABEÇALHO - BUTTON */
+.main--button--filter{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    font-family: var(--fonte-destaque);
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 125px;
+    height: 35px;
+    background-color: #2E97F2;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.todo--config--container{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.todo--config--container--tittle{
+    font-family: var(--fonte-destaque);
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #444444;
+}
 /* MAIN - CABEÇALHO - SEARCH */
 .search--input{
     width: 300px;
@@ -115,6 +146,7 @@ body{
     border: 2px solid #2E97F2;
     border-radius: 20px 20px 0px 20px;
     box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.15);
+    z-index: 1111;
 }
 .filter--close--div{
     display: flex;
@@ -254,10 +286,26 @@ th, td{
 /* MAIN - TAREFAS - TABELA - CORPO */
 .tabela--body--coluna--nome > div{
     display: flex;
+    justify-content: space-between;
+}
+.tabela--body--coluna--nome > div > div{
+    max-width: 500px;
+    overflow: hidden;
+    overflow-x: scroll;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 1.1em;
     font-weight: 500;
+}
+.tabela--body--coluna--nome > div > div::-webkit-scrollbar{
+    height: 7px;
+    background-color: #444444;
+    border-radius: 10px;
+}
+.tabela--body--coluna--nome > div > div::-webkit-scrollbar-thumb{
+    background-color: #808080;
+    border-radius: 10px;
 }
 .nome--config{
     background-color: #ffffff00;
@@ -293,13 +341,15 @@ th, td{
     text-transform: uppercase;
     color: #fff;
 }
-/* CONTEÚDO SITE - TAREFAS - TABELA - CORPO - EDITOR - STATUS */
+/* MAIN - TAREFAS - TABELA - CORPO - EDITOR - STATUS */
 .status--editor{
     position: absolute;
     width: 90%;
     top: 100%;
     left: 50%;
     transform: translate(-50%, 0);
+    z-index: 1000;
+    border: 3px solid black;
 }
 .status--editor--container{
     background-color: #bdbdbd;
@@ -342,6 +392,8 @@ th, td{
     top: 100%;
     left: 50%;
     transform: translate(-50%, 0);
+    z-index: 1000;
+    border: 3px solid black;
 }
 .dataIni--editor--container{
     background-color: #bdbdbd;
@@ -376,6 +428,8 @@ th, td{
     top: 100%;
     left: 50%;
     transform: translate(-50%, 0);
+    z-index: 1000;
+    border: 3px solid black;
 }
 .dataTer--editor--container{
     background-color: #bdbdbd;
@@ -410,6 +464,8 @@ th, td{
     top: 100%;
     left: 50%;
     transform: translate(-50%, 0);
+    z-index: 1000;
+    border: 3px solid black;
 }
 .priority--editor--container{
     background-color: #bdbdbd;

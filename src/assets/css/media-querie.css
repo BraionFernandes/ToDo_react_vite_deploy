@@ -1,72 +1,187 @@
 @charset "UTF-8";
 @media screen and (max-width: 1100px){
-    /* CONTEÚDO SITE - TAREFAS - TABELA */
-    .head-coluna-tarefa{
+    .tabela--head--coluna--tarefa{
         width: 26%;
     }
-    .head-coluna-status, .head-coluna-dataini, .head-coluna-datater{
+    .tabela--head--coluna--status, .tabela--head--coluna--dataini, .tabela--head--coluna--datater{
         width: 18%;
     }
-    .head-coluna-prioridade{
+    .tabela--head--coluna--prioridade{
         width: 20%;
     }
-    .status-editor, .dataIni-editor, .dataTer-editor, .priority-editor{
+    .status--editor, .dataIni--editor, .dataTer--editor, .priority--editor{
         width: 100%;
     }
 }
 @media screen and (max-width: 850px){
-    .body-coluna-tarefa > div{
+    .tabela--body--coluna--nome > div{
         font-size: 1em;
     }
-    .body-coluna-status, .body-coluna-dataini, .body-coluna-datater, .body-coluna-prioridade{
+    .tabela--body--coluna--status, .tabela--body--coluna--dataini, .tabela--body--coluna--datater, .tabela--body--coluna--prioridade{
         font-size: .9em;
     }
 }
 @media screen and (max-width: 640px){
-    .search-input{
+    .close--div{
+        margin-bottom: 5px !important
+    }
+
+    /* ESTILO CABEÇALHO */
+
+    .header--picture{
+        width: 150px;
+        height: 40px;
+    }
+
+    /* MAIN - CABEÇALHO - BUTTON - CONFIG*/
+
+    .todo--config--container{
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 60%;
+        left: 0%;
+        width: 100%;
+        height: 40vh;
+        background-color: #242424;
+    }
+    .todo--config--container > button{
+        margin: 20px;
+    }
+    .todo--config--container--tittle{
+        color: #fff;
+    }
+
+    /* MAIN - CABEÇALHO - CONFIG*/
+
+    .filter--button, .order--button{
+        color: #fff;
+    }
+    .search--input{
         width: 200px;
         font-size: .9em;
     }
-    .filter-button, .order-button{
+    .filter--button, .order--button{
         font-size: 1em;
     }
-    .head-linha th{
+
+    /* MAIN - CABEÇALHO - FILTRO */
+
+    .filter, .order{
+        top: 50%;
+        width: 100%;
+        height: 40vh;
+        border-radius: 0px;
+    }
+    .filter--tittle, .order--tittle{
+        padding: 5px;
+        height: auto;
+    }
+    .filters, .order--buttons{
+        height: 40%;
+        gap: 15px;
+    }
+
+    /* MAIN - TAREFAS*/
+
+    .tarefas--registradas{
+        overflow: scroll;
+    }
+
+    /* MAIN - TAREFAS - TABELA */
+
+    .tabela--head--linha > th{
         font-size: .9em;
     }
-    .status-editor{
-        top: 70%;
-        left: 50%;
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
+    .tabela--body--coluna--nome > div{
+        width: 200px;
+        overflow: scroll;
     }
-    .status-editor-buttons{
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        width: 100%;
-        height: 30%;
+    .close--div{
+        margin-bottom: 20px;
     }
-    .status-editor-buttons button{
-        width: 60%;
+    .close--button{
         padding: 5px;
     }
-    .dataIni-editor{
+
+    /* MAIN - TAREFAS - TABELA - CORPO */
+
+    .tabela--body--coluna--status , .tabela--body--coluna--dataini, .tabela--body--coluna--datater, .tabela--body--coluna--prioridade{
+        position: unset;
+    }
+
+    /* MAIN - TAREFAS - TABELA - CORPO - EDITOR*/
+
+    .status--editor{
+        top: 50%;
+        left: 50%;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+    }
+    .status--editor--container{
+        display: block;
+        width: 100%;
+        height: 50%;
+    }
+    .status--editor--buttons, .priority--editor--buttons{
+        justify-content: center;
+        align-items: center;
+    }
+    .status--editor--buttons button, .priority--editor--buttons button{
+        width: 300px;
+        padding: 10px;
+        margin: 2px;
+    }
+    .dataIni--editor, .dataTer--editor{
         top: 70%;
         left: 50%;
         position: fixed;
         width: 100vw;
         height: 100vh;
     }
-    .dataIni-editor-form{
-        align-items: center;
-        justify-content: center;
-        position: absolute;
+    .dataIni--editor--container, .dataTer--editor--container{
+        display: block;
         width: 100%;
         height: 30%;
     }
-    .dataIni-editor-form-input{
+    .dataIni--editor--form, .dataTer--editor--form{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .dataIni--editor--form--input, .dataTer--editor--form--input{
         width: 70%;
         padding: 5px;
+    }
+    .priority--editor{
+        top: 50%;
+        left: 50%;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+    }
+    .priority--editor--container{
+        display: block;
+        width: 100%;
+        height: 50%;
+    }
+
+    /* OUTRAS ABAS - ABA CREATOR */
+    .creator--close--div{
+        margin-bottom: 5px;
+    }
+    .creator{
+        top: 68%;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .creator--form{
+        padding: 0px;
+        gap: 10px;
+    }
+    .creator--form--inputSubmit{
+        margin: 5px;
     }
 }

@@ -96,7 +96,12 @@ export default function Elemento(props){
     return(
         <>
             <tr className='tabela--body--linha'>
-                <td className='tabela--body--coluna--nome'><div>{props.todo.text}<button className='nome--config' onClick={()=> editarElemento(props.todo.id)}><i className='material-symbols-outlined'>open_in_full</i> Abrir</button></div></td>
+                <td className='tabela--body--coluna--nome'>
+                    <div>
+                        <div>{props.todo.text}</div>
+                        <button className='nome--config' onClick={()=> editarElemento(props.todo.id)}><i className='material-symbols-outlined'>open_in_full</i> Abrir</button>
+                    </div>
+                </td>
                 <td className='tabela--body--coluna--status' style={{backgroundColor: statusColor(props.todo.status)}} onClick={()=> editarStatus(props.todo.id)}>{props.todo.status}
                     <StatusEdit statusEdit={statusEdit} setStatusEdit={setStatusEdit} dados={props.dados} setDados={props.setDados} setStatusEditClose={setStatusEditClose}/>   
                 </td>

@@ -25,9 +25,17 @@ function App() {
   const [sort,setSort]=useState("Asc");
 
   const [isFormVisible,setIsFormVisible]=useState(false);
+  const [filterVisible,setFilterVisible]=useState(false);
 
   const handleOpenForm=()=>{
     setIsFormVisible(true);
+  }
+
+  const openFilter=()=>{
+    setFilterVisible(true);
+  }
+  const closeFilter=()=>{
+    setFilterVisible(false);
   }
   return (
     <>
@@ -41,15 +49,28 @@ function App() {
           <div className='todo--config--creator'>
             <button className='creator--button' onClick={handleOpenForm}>Criar Tarefa</button>
           </div>
-          <div className='todo--config--search'>
-            <PesquisarTarefas dados={dados} search={search} setSearch={setSearch}/>
-          </div>
-          <div className='todo--config--filter'>
-            <FiltrarTarefas fstatus={fstatus} setFstatus={setFstatus} fpriority={fpriority} setFpriority={setFpriority}/>
-          </div>
-          <div className='todo--config--order'>
-            <OrdenarTarefas setSort={setSort}/>
-          </div>
+          <button className='main--button--filter' onClick={filterVisible ? closeFilter : openFilter}><i className='material-symbols-outlined'>filter_list</i>
+            Filtros
+          </button>
+          {filterVisible &&(
+            <div className='todo--config--container'>
+                <div className='config--container--close--div close--div'>
+                  <button className='config--container--close--button close--button material-symbols-outlined' onClick={()=> setFilterVisible(false)}>
+                      close
+                  </button>
+                </div>
+                <p className='todo--config--container--tittle'>Filtros</p>
+                <div className='todo--config--search'>
+                  <PesquisarTarefas dados={dados} search={search} setSearch={setSearch}/>
+                </div>
+                <div className='todo--config--filter'>
+                  <FiltrarTarefas fstatus={fstatus} setFstatus={setFstatus} fpriority={fpriority} setFpriority={setFpriority}/>
+                </div>
+                <div className='todo--config--order'>
+                  <OrdenarTarefas setSort={setSort}/>
+                </div>
+            </div>
+          )}
         </aside>
         <section className='tarefas'>
           <div className='tarefas--registradas'>
