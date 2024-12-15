@@ -3,6 +3,8 @@ import { useState } from 'react'
 import './assets/css/App.css'
 import './assets/css/media-querie.css'
 
+import logo from './assets/img/taskifyLogo.png'
+
 import Editor from './components/Editor.jsx'
 import GerenciadorTarefas from './components/GerenciadorTarefas.jsx'
 import PesquisarTarefas from './components/PesquisarTarefas.jsx'
@@ -41,7 +43,7 @@ function App() {
     <>
       <header className='header'>
         <picture className='header--picture'>
-          <img className='header--picture--logo' src="./src/assets/img/taskifyLogo.png" alt="Empire Logo" />
+          <img className="header--picture--logo" src={logo} alt=""/>
         </picture>
       </header>
       <main className='main'>
